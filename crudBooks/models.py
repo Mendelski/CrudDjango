@@ -5,5 +5,5 @@ class Livro(models.Model):
    autor= models.CharField(max_length=100)
    edicao = models.IntegerField()
 
-   def _str_(self):
+   def __str__(self):
        return self.nome
