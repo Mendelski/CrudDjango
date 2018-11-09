@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Livros</title>
+    <link rel="stylesheet" url="">
+</head>
+<body>
+	<div class="container">
+	  <h1 class="text-center">Livros</h1>	     
+	  <table class="table table-light table-striped">
+	    <thead class="thead-dark">
+	      <tr>
+	        <th><b>Nome</b></th>
+	        <th><b>Autor</b></th>
+	        <th><b>Edição</b></th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    	{% for livro in livros %}
+	    		<tr>
+	    			<td>{{ livro.nome }}</td>
+	    			<td>{{ livro.autor }}</td>
+	    			<td>{{ livro.edicao }}</td>
+	    			<td><a href="{% url 'update' livro.id %}">Editar</a></td>
+	    			<td><a href="{% url 'delete' livro.id %}">Excluir</a></td>
+                    
+	    		</tr>	   		
+	    	{% endfor %}
+	    </tbody>	    
+	  </table>
+	 <a href="{% url 'create' %}">Novo Livro</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro de Livros</title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}
+		{{ livroForm.as_p }}
+		<button type="submit">Salvar</button>
+	</form>
+	<a href="{% url 'home' %}">Voltar</a>
+</body>
+</html>
